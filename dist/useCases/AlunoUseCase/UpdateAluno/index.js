@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateAlunoController = exports.UpdateAlunoController = void 0;
+const DataBaseAlunoRepository_1 = require("../../../repositories/implementations/DataBaseAlunoRepository");
+const UpdateAlunoController_1 = require("./UpdateAlunoController");
+Object.defineProperty(exports, "UpdateAlunoController", { enumerable: true, get: function () { return UpdateAlunoController_1.UpdateAlunoController; } });
+const UpdateAlunoUseCase_1 = require("./UpdateAlunoUseCase");
+const dataBaseAlunoRepository = new DataBaseAlunoRepository_1.DataBaseAlunoRepository();
+const updateAlunoUseCase = new UpdateAlunoUseCase_1.UpdateAlunoUseCase(dataBaseAlunoRepository);
+const updateAlunoController = new UpdateAlunoController_1.UpdateAlunoController(updateAlunoUseCase);
+exports.updateAlunoController = updateAlunoController;

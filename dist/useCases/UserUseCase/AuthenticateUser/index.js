@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuthenticateUserController = exports.authenticateUserController = void 0;
+const DataBaseUserRepository_1 = require("../../../repositories/implementations/DataBaseUserRepository");
+const AuthenticateUserController_1 = require("./AuthenticateUserController");
+Object.defineProperty(exports, "AuthenticateUserController", { enumerable: true, get: function () { return AuthenticateUserController_1.AuthenticateUserController; } });
+const AuthenticateUserUseCase_1 = require("./AuthenticateUserUseCase");
+const dataBaseUserRepository = new DataBaseUserRepository_1.DataBaseUserRepository();
+const authenticateUserUseCase = new AuthenticateUserUseCase_1.AuthenticateUserUseCase(dataBaseUserRepository);
+const authenticateUserController = new AuthenticateUserController_1.AuthenticateUserController(authenticateUserUseCase);
+exports.authenticateUserController = authenticateUserController;

@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateDisciplinaController = exports.UpdateDisciplinaController = void 0;
+const DataBaseDisciplinaRepository_1 = require("../../../repositories/implementations/DataBaseDisciplinaRepository");
+const UpdateDisciplinaController_1 = require("./UpdateDisciplinaController");
+Object.defineProperty(exports, "UpdateDisciplinaController", { enumerable: true, get: function () { return UpdateDisciplinaController_1.UpdateDisciplinaController; } });
+const UpdateDisciplinaUseCase_1 = require("./UpdateDisciplinaUseCase");
+const dataBaseDisciplinaRepository = new DataBaseDisciplinaRepository_1.DataBaseDisciplinaRepository();
+const updateDisciplinaUseCase = new UpdateDisciplinaUseCase_1.UpdateDisciplinaUseCase(dataBaseDisciplinaRepository);
+const updateDisciplinaController = new UpdateDisciplinaController_1.UpdateDisciplinaController(updateDisciplinaUseCase);
+exports.updateDisciplinaController = updateDisciplinaController;

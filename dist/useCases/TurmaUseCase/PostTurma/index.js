@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createTurmaController = exports.CreateTurmaController = void 0;
+const DataBaseTurmaRepository_1 = require("../../../repositories/implementations/DataBaseTurmaRepository");
+const PostTurmaController_1 = require("./PostTurmaController");
+Object.defineProperty(exports, "CreateTurmaController", { enumerable: true, get: function () { return PostTurmaController_1.CreateTurmaController; } });
+const PostTurmaUseCase_1 = require("./PostTurmaUseCase");
+const dataBaseTurmaRepository = new DataBaseTurmaRepository_1.DataBaseTurmaRepository();
+const createTurmaUseCase = new PostTurmaUseCase_1.CreateTurmaUseCase(dataBaseTurmaRepository);
+const createTurmaController = new PostTurmaController_1.CreateTurmaController(createTurmaUseCase);
+exports.createTurmaController = createTurmaController;

@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createAlunoController = exports.CreateAlunoController = void 0;
+const DataBaseAlunoRepository_1 = require("../../../repositories/implementations/DataBaseAlunoRepository");
+const PostAlunoController_1 = require("./PostAlunoController");
+Object.defineProperty(exports, "CreateAlunoController", { enumerable: true, get: function () { return PostAlunoController_1.CreateAlunoController; } });
+const PostAlunoUseCase_1 = require("./PostAlunoUseCase");
+const dataBaseAlunoRepository = new DataBaseAlunoRepository_1.DataBaseAlunoRepository();
+const createAlunoUseCase = new PostAlunoUseCase_1.CreateAlunoUseCase(dataBaseAlunoRepository);
+const createAlunoController = new PostAlunoController_1.CreateAlunoController(createAlunoUseCase);
+exports.createAlunoController = createAlunoController;

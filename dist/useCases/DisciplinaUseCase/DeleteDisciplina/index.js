@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteDisciplinaController = exports.DeleteDisciplinaController = void 0;
+const DataBaseDisciplinaRepository_1 = require("./../../../repositories/implementations/DataBaseDisciplinaRepository");
+const DeleteDisciplinaController_1 = require("./DeleteDisciplinaController");
+Object.defineProperty(exports, "DeleteDisciplinaController", { enumerable: true, get: function () { return DeleteDisciplinaController_1.DeleteDisciplinaController; } });
+const DeleteDisciplinaUseCase_1 = require("./DeleteDisciplinaUseCase");
+const dataBaseDisciplinaRepository = new DataBaseDisciplinaRepository_1.DataBaseDisciplinaRepository();
+const deleteDisciplinaUseCase = new DeleteDisciplinaUseCase_1.DeleteDisciplinaUseCase(dataBaseDisciplinaRepository);
+const deleteDisciplinaController = new DeleteDisciplinaController_1.DeleteDisciplinaController(deleteDisciplinaUseCase);
+exports.deleteDisciplinaController = deleteDisciplinaController;

@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateProfessorController = exports.UpdateProfessorController = void 0;
+const DataBaseProfessorRepository_1 = require("../../../repositories/implementations/DataBaseProfessorRepository");
+const UpdateProfessorController_1 = require("./UpdateProfessorController");
+Object.defineProperty(exports, "UpdateProfessorController", { enumerable: true, get: function () { return UpdateProfessorController_1.UpdateProfessorController; } });
+const UpdateProfessorUseCase_1 = require("./UpdateProfessorUseCase");
+const dataBaseProfessorRepository = new DataBaseProfessorRepository_1.DataBaseProfessorRepository();
+const updateProfessorUseCase = new UpdateProfessorUseCase_1.UpdateProfessorUseCase(dataBaseProfessorRepository);
+const updateProfessorController = new UpdateProfessorController_1.UpdateProfessorController(updateProfessorUseCase);
+exports.updateProfessorController = updateProfessorController;

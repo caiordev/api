@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createProfessorController = exports.CreateProfessorController = void 0;
+const DataBaseProfessorRepository_1 = require("../../../repositories/implementations/DataBaseProfessorRepository");
+const PostProfessorController_1 = require("./PostProfessorController");
+Object.defineProperty(exports, "CreateProfessorController", { enumerable: true, get: function () { return PostProfessorController_1.CreateProfessorController; } });
+const PostProfessorUseCase_1 = require("./PostProfessorUseCase");
+const dataBaseProfessorRepository = new DataBaseProfessorRepository_1.DataBaseProfessorRepository();
+const createProfessorUseCase = new PostProfessorUseCase_1.CreateProfessorUseCase(dataBaseProfessorRepository);
+const createProfessorController = new PostProfessorController_1.CreateProfessorController(createProfessorUseCase);
+exports.createProfessorController = createProfessorController;
